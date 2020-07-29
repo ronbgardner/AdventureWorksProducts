@@ -1,0 +1,36 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "Product Detail";
+}
+<h1>@ViewData["Title"]</h1>
+
+<table id="tblProductDetail" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+</table>
+
+<br />
+
+<h1>Product Cost History</h1>
+
+<table id="tblCostHistory" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>StandardCost</th>
+        </tr>
+    </thead>
+</table>
+
+<input id="hiddenProductID" type="hidden" value="@Model" />
+
+@section Scripts{
+    <script>var productDetailID = $('#hiddenProductID').val()</script>
+    <script src="~/js/productDetail.js"></script>
+}
